@@ -34,10 +34,10 @@ $banner = "
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 ";
 print $banner;
-echo "\nMau cari apa? ";
+echo "\nWhat product your looking ? ";
 $search = trim(fgets(STDIN));
 
-echo "Berapa? ";
+echo "จำนวน? ";
 $totalSearch = trim(fgets(STDIN));
 
 $getSearch = getSearch($curl, $search, $totalSearch);
@@ -54,7 +54,7 @@ if($getSearch->error == null) {
             //$diskonItem = $getItem->item->discount;
             $statusItem = $getItem->item->item_status;
             $lokasiToko = $getItem->item->shop_location;
-            $imageItem = 'https://cf.shopee.co.id/file/' . $getItem->item->image;
+            $imageItem = 'https://cf.shopee.co.th/file/' . $getItem->item->image;
 
             if($statusItem == "normal") {
                 $status = "Tersedia";
