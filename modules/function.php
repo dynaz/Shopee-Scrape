@@ -11,7 +11,7 @@
  */
 function getSearch($curl, $search, $totalSearch)
 {
-    $curl->get('https://shopee.co.id/api/v2/search_items/?by=relevancy&keyword=' . $search . '&limit=' . $totalSearch . '&newest=0&order=desc&page_type=search&version=2');
+    $curl->get('https://shopee.co.th/api/v2/search_items/?by=relevancy&keyword=' . $search . '&limit=' . $totalSearch . '&newest=0&order=desc&page_type=search&version=2');
 
     if ($curl->error) {
         echo 'Error: ' . $curl->errorCode . ': ' . $curl->errorMessage . "\n";
@@ -22,7 +22,7 @@ function getSearch($curl, $search, $totalSearch)
 }
 
 function getItem($curl, $itemID, $shopID) {
-    $curl->get('https://shopee.co.id/api/v2/item/get?itemid=' . $itemID . '&shopid=' . $shopID);
+    $curl->get('https://shopee.co.th/api/v2/item/get?itemid=' . $itemID . '&shopid=' . $shopID);
 
     if ($curl->error) {
         echo 'Error: ' . $curl->errorCode . ': ' . $curl->errorMessage . "\n";
@@ -65,8 +65,8 @@ function htmlConverter() {
     echo "<th>No</th>";
     echo "<th>Nama</th>";
     echo "<th>Harga</th>";
-    echo "<th>Lokasi</th>";
-    echo "<th>Foto</th>";
+    echo "<th>location</th>";
+    echo "<th>Phototo</th>";
     echo "<th>Status</th>";
     foreach ($data["data"] as $key => $value) {
         echo "<tr>\n";
@@ -85,7 +85,7 @@ function htmlConverter() {
     echo '<footer align="center">';
     echo '<a>Copyright @ 2019</a>';
     echo "<br>";
-    echo '<a href="https://www.linkedin.com/in/warifp">Wahyu Arif Purnomo</a><a> x Shopee Scrape</a>';
+    echo '<a> x Shopee Scrape</a>';
     echo '</footer>';
 }
 /**
